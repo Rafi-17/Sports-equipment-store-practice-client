@@ -34,15 +34,16 @@ const router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>
       },
+
       {
         path: '/users',
         element: <Users></Users>,
-        loader: ()=>fetch('http://localhost:5000/users')
+        loader: ()=>fetch('https://users-management-server-one.vercel.app/users')
       },
       {
         path:'/update/:id',
         element:<Update></Update>,
-        loader:({params})=>fetch(`http://localhost:5000/users/${params.id}`)
+        loader:({params})=>fetch(`https://users-management-server-one.vercel.app/users/${params.id}`)
       },
       {
         path: '/addEquipment',
@@ -51,22 +52,22 @@ const router = createBrowserRouter([
       {
         path: '/allEquipment',
         element:<AllEquipment></AllEquipment>,
-        loader:()=>fetch('http://localhost:5000/equipments')
+        loader:()=>fetch('https://users-management-server-one.vercel.app/equipments')
       },
       {
         path: '/equipments/:id',
         element: <PrivateRoute><EquipmentDetails></EquipmentDetails></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/equipments/${params.id}`)
+        loader: ({params})=> fetch(`https://users-management-server-one.vercel.app/equipments/${params.id}`)
       },
       {
         path:'/myEquipments/:email',
         element:<PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/myEquipments/${params.email}`)
+        loader:({params})=>fetch(`https://users-management-server-one.vercel.app/myEquipments/${params.email}`)
       },
       {
         path: '/myEquipments/updateEquipment/:id',
         element: <PrivateRoute><UpdateEquipment></UpdateEquipment></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/equipments/${params.id}`)
+        loader:({params})=>fetch(`https://users-management-server-one.vercel.app/equipments/${params.id}`)
       }
     ]
   },

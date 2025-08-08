@@ -18,7 +18,7 @@ const EquipmentCard = ({equipment,equipments,setEquipments}) => {
             confirmButtonText: "Yes, delete it!"
             }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/equipments/${id}`,{
+                fetch(`https://users-management-server-one.vercel.app/equipments/${id}`,{
                     method:'DELETE'
                 })
                 .then(res=>res.json())

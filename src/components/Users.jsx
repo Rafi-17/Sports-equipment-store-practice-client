@@ -8,7 +8,7 @@ const Users = () => {
         
         const data= users.find(user=>user._id===id);
         console.log(data);
-        fetch(`http://localhost:5000/users/${id}`,{
+        fetch(`https://users-management-server-one.vercel.app/users/${id}`,{
             method: 'DELETE'
         })
         .then(res=>res.json())

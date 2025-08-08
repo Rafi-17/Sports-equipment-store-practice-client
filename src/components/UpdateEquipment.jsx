@@ -48,7 +48,7 @@ const UpdateEquipment = () => {
             const stockStatus = e.target.stockStatus.value;
             const updatedEquipment={ photo, item, category, description, price, rating, customization, processingTime, stockStatus };
             console.log(updatedEquipment);
-            fetch(`http://localhost:5000/equipments/${_id}`,{
+            fetch(`https://users-management-server-one.vercel.app/equipments/${_id}`,{
                 method: 'PUT',
                 headers:{
                     'Content-type' : 'application/json'

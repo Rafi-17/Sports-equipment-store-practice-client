@@ -10,7 +10,7 @@ const Update = () => {
         const name= e.target.name.value;
         const email= e.target.email.value;
         const updatedUser={name, email};
-        fetch(`http://localhost:5000/users/${user._id}`,{
+        fetch(`https://users-management-server-one.vercel.app/users/${user._id}`,{
             method: 'PUT',
             headers:{
                 'Content-type' : 'application/json'
